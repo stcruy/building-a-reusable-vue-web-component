@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+
+  <title>my-component</title>
+
+  <style>
+    body { font-family: sans-serif;  font-size: 14px;  margin: 0; }
+    a, a:visited { color: #FF0000; }
+    #app { padding: 20px 0 18px 50px;  background-color: #FFEEDD;  min-height: 180px; }
+  </style>
+
+  <!-- For faster reloads, we include Vue.js in the webpack bundle, during dev.
+  <script src="https://unpkg.com/vue"></script> -->
+</head>
+
+
+<body>
+
+  <div id="app">
+    <my-component
+      class="vsm-ac"
+      :initial-count="init"
+      :data-source="myDataSource"
+      @inc="incReported">
+    </my-component>
+    <br>
+    <my-component :initial-count="8" v-if="addNr2"></my-component>
+  </div>
+
+
+  <!-- Here we override my-component's default styling -->
+  <style>
+    .vsm-ac span { font-size: 16px; color: green; }
+  </style>
+
+</body>
+</html>
