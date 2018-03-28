@@ -8,9 +8,9 @@ element that your *consumers (=other developers)* can use in their projects.
 
 This project is a working **webpack+npm configuration**,
 that supports three types of consumers for your Vue component:  
-&bull; those who want a 'standalone web-component',  
-&bull; those who want only a 'slim build', and  
-&bull; those who simply use it in their own Vue app.
+&bull; developers who want to use a 'standalone web-component',  
+&bull; developers who want only a 'slim build', and  
+&bull; developers who simply use it in their own Vue app.
 
 
 ## <br>The three consumer types
