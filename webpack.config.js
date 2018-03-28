@@ -2,7 +2,7 @@
 npm i -D
   webpack  webpack-dev-server  webpack-cli
   style-loader  css-loader  null-loader  clean-webpack-plugin
-  html-webpack-plugin  text-transform-loader  uglifyjs-webpack-plugin
+  html-webpack-plugin  uglifyjs-webpack-plugin
   "babel-loader@^8.0.0-beta"  @babel/core  @babel/preset-env
   vue  vue-loader  vue-template-compiler  vue-style-loader  @vue/test-utils
   document-register-element  vue-custom-element
@@ -67,14 +67,12 @@ module.exports = (env = {}) => {
             enforce: 'pre',
             loader: 'eslint-loader',
             options: Object.assign(  // These override '.estlintrc' options.
-              // Disallow `console.log()`, in production builds only.
-              PROD ? {
+              PROD ? {  // Disallow `console.log()`, in production builds only.
                 rules: {
                   'no-console': 'warn'
                 }
               } : {},
-              // Prevent errors from abort the build, except in production.
-              !PROD ? {
+              !PROD ? {  // Make errors not abort the build, except in prod.
                 emitWarning: true,
               } : {}
             )
@@ -91,14 +89,6 @@ module.exports = (env = {}) => {
               {
                 loader: 'babel-loader',
                 options: { presets: ['@babel/preset-env'] }
-              },
-              {
-                loader: 'text-transform-loader',
-                options: {
-                  transformText: s =>
-                    // Exclude this VsmDictionary dependency, for use in browser:
-                    s.replace(/require\('xmlhttprequest'\)/g, '{}')
-                }
               }
             ]
           },
@@ -117,13 +107,12 @@ module.exports = (env = {}) => {
       },
 
       node: {
-        fs: 'empty',
-        child_process: 'empty'
+        fs: 'empty'
       },
 
       externals: (
         PROD && ! PROD_SA ? {
-          vue: 'vue'  // Exclude Vue framework code, for a not-standalone build.
+          vue: 'vue'  // Exclude Vue framework code, for a non-standalone build.
         } :
         TEST ? [ nodeExternals() ] :
       {} ),
