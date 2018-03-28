@@ -73,15 +73,15 @@ This project includes:
   (after you ran `npm install` first) :
   - `npm start` bundles the code for the browser, starts a Webpack dev-server,
     and opens the demo page `index-dev.html` (incl. `index-dev.js`).
-  - `npm build` launches two build processes: `build:slim` and `build:standalone`.
+  - `npm run build` launches two build processes: `build:slim` and `build:standalone`.
     - These compile both the slim and standalone JS-code into the `dist` folder,
       named `my-component.min.js` and `my-component.standalone.min.js` respectively.
   - `npm test` runs the test code.
-  - `npm testw` runs the test code in watch-mode (auto-retests on file changes).
-  - `npm testwi` does the same but does not clear the console.
-  - `npm dev` runs `start` and `testwi` in parallel, so you can use a single
+  - `npm run testw` runs the test code in watch-mode (auto-retests on file changes).
+  - `npm run testwi` does the same but does not clear the console.
+  - `npm run dev` runs `start` and `testwi` in parallel, so you can use a single
     console-window during development, to see webpack and test errors.
-  - `npm lint` runs style checks on the code.
+  - `npm run lint` runs style checks on the code.
     - These checks are automatically run during the dev/test/builds as well.
     - During dev/test they produce only non-breaking warnings instead of errors.
 
