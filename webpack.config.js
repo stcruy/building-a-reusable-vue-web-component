@@ -4,7 +4,7 @@ npm i -D
   style-loader  css-loader  null-loader  clean-webpack-plugin
   html-webpack-plugin  uglifyjs-webpack-plugin
   "babel-loader@^8.0.0-beta"  @babel/core  @babel/preset-env
-  vue  vue-loader  vue-template-compiler  vue-style-loader  @vue/test-utils
+  vue  vue-loader  vue-template-compiler  @vue/test-utils
   document-register-element  vue-custom-element
   mocha  mocha-webpack@^2.0.0-beta.0  webpack-node-externals
   jsdom  jsdom-global  chai
