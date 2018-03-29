@@ -24,11 +24,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vsmjs/building-a-reusable-vue-web-component"
+    "url": "git+https://github.com/stcruy/building-a-reusable-vue-web-component"
   },
   "author": "Steven Vercruysse (http://stcruy.com)",
   "license": "MIT",
-  "homepage": "https://github.com/vsmjs/building-a-reusable-vue-web-component#readme",
+  "homepage": "https://github.com/stcruy/building-a-reusable-vue-web-component#readme",
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.42",
     "@babel/preset-env": "^7.0.0-beta.42",
