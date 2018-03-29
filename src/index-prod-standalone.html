@@ -30,24 +30,24 @@
       + Note: no Vue-app wrapper-elem is needed here, for the standalone version.
     -->
     <my-component
-      id="x"
-      class="vsm-ac"
+      id="comp1"
       initial-count="20">
     </my-component>
     <br>
   </div>
 
 
-  <!-- Here we override my-component's default styling -->
+  <!-- Here we override a my-component's default styling -->
   <style>
-    .vsm-ac span { font-size: 16px; color: green; }
+    #comp1 span { font-size: 16px; color: green; }
+    #comp1 span.smaller { font-size: 10px; }
   </style>
 
 
   <script>
 
     // Demo use 1): attach an Object as a prop.
-    var el = document.getElementById('x');
+    var el = document.getElementById('comp1');
     el.dataSource = class {
       static getValue() {
         return 39;

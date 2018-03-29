@@ -20,7 +20,7 @@
 
   <div id="app">
     <my-component
-      class="vsm-ac"
+      id="comp1"
       :initial-count="init"
       :data-source="myDataSource"
       @inc="incReported">
@@ -30,9 +30,10 @@
   </div>
 
 
-  <!-- Here we override my-component's default styling -->
+  <!-- Here we override a my-component's default styling -->
   <style>
-    .vsm-ac span { font-size: 16px; color: green; }
+    #comp1 span { font-size: 16px; color: green; }
+    #comp1 span.smaller { font-size: 10px; }
   </style>
 
 </body>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="my-component">
     <button @click="increment">+</button>&nbsp;
     <span>{{ count }}
       <span class="smaller">
