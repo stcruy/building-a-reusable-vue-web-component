@@ -9,6 +9,8 @@ npm i -D
   mocha  mocha-webpack@^2.0.0-beta.0  webpack-node-externals
   jsdom  jsdom-global  chai
   eslint  eslint-loader  eslint-plugin-vue
+  stylelint  stylelint-webpack-plugin
+  stylelint-config-standard  stylelint-config-recess-order
   opn-cli  npm-run-all
 npm i -P
 */
@@ -18,6 +20,7 @@ const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
 
@@ -123,10 +126,12 @@ module.exports = (env = {}) => {
           }),
         ]
         .concat( DEV ?
-          new HtmlWebpackPlugin({
-            template: src + '/index-dev.html',
-            inject: 'body'
-          }) : []
+          [ new HtmlWebpackPlugin({
+              template: src + '/index-dev.html',
+              inject: 'body'
+            }),
+            new StylelintPlugin({ files: ['src/**/*.vue'] })
+          ] : []
         )
         .concat( PROD && ! PROD_SA ?  // Empty 'dist' before 1st of 2 prod-builds.
           [ new CleanWebpackPlugin([ dist ]) ] : []

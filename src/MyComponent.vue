@@ -51,6 +51,11 @@ export default {
 
 
 <style scoped>
-  span { font-size: 12px; color: blue; }
-  span.smaller { font-size: 10px; }
+  span {
+    font-size: 12px;
+    color: blue;
+  }
+  span.smaller {
+    font-size: 10px;
+  }
 </style>
