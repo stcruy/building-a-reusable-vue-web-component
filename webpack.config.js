@@ -1,16 +1,18 @@
 /*
-npm i -D
-  webpack  webpack-dev-server  webpack-cli
-  style-loader  css-loader  null-loader  clean-webpack-plugin
-  html-webpack-plugin  uglifyjs-webpack-plugin
-  "babel-loader@^8.0.0-beta"  @babel/core  @babel/preset-env
-  vue  vue-loader  vue-template-compiler  @vue/test-utils
-  document-register-element  vue-custom-element
-  mocha  mocha-webpack@^2.0.0-beta.0  webpack-node-externals
-  jsdom  jsdom-global  chai
-  eslint  eslint-loader  eslint-plugin-vue
-  stylelint  stylelint-webpack-plugin
-  stylelint-config-standard  stylelint-config-recess-order
+For a clean reinstall:
+delete 'package-lock.json', empty 'package.json'`s dev/Dependencies, and run:
+npm i -D \
+  webpack  webpack-dev-server  webpack-cli \
+  style-loader  css-loader  null-loader  clean-webpack-plugin \
+  html-webpack-plugin  uglifyjs-webpack-plugin \
+  babel-loader  @babel/core  @babel/preset-env \
+  vue  vue-loader  vue-template-compiler  @vue/test-utils \
+  document-register-element  vue-custom-element \
+  mocha  mocha-webpack@^2.0.0-beta.0  webpack-node-externals \
+  jsdom  jsdom-global  chai \
+  eslint  eslint-loader  eslint-plugin-vue \
+  stylelint  stylelint-webpack-plugin \
+  stylelint-config-standard  stylelint-config-recess-order \
   opn-cli  npm-run-all
 npm i -P
 */
@@ -22,6 +24,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const nodeExternals = require('webpack-node-externals');
 
 const sourceMapInProd = false;
@@ -124,6 +127,7 @@ module.exports = (env = {}) => {
         [ new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(env.NODE_ENV)
           }),
+          new VueLoaderPlugin()
         ]
         .concat( DEV ?
           [ new HtmlWebpackPlugin({
