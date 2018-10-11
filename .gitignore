@@ -1,0 +1,9 @@
+node_modules/
+y-*/
+z-*/
+.idea/
+2Do*
+secret*
+*.bat
+*.lnk
+*.sublime*
